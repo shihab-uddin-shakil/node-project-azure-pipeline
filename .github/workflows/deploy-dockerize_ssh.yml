@@ -57,7 +57,7 @@ jobs:
           echo "${{ secrets.ENV_FILE }}" > /tmp/docker-deploy/.env
 
           # Load Docker image
-          docker load < /tmp/docker-deploy/my-node-app.tar
+          sudo docker load < /tmp/docker-deploy/my-node-app.tar
 
           # Run Docker container with .env file
-          docker run -d --name node_app --env-file /tmp/docker-deploy/.env -p 80:3000 my-node-app:latest
+          sudo docker run -d --name node_app --env-file /tmp/docker-deploy/.env -p 80:3000 my-node-app:latest
