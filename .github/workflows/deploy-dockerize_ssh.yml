@@ -44,8 +44,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           # Stop and remove existing container
-          docker stop node_app || true
-          docker rm node_app || true
+          sudo docker stop node_app || true
+          sudo docker rm node_app || true
 
           # Create deployment directory
           mkdir -p /tmp/docker-deploy
